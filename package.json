@@ -9,10 +9,6 @@
     "build": "web-ext build --overwrite-dest --source-dir ./src/",
     "test": "web-ext lint --source-dir ./src/ || true"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SimonBrazell/privacy-redirect.git"
-  },
   "author": "SimonBrazell",
   "license": "GPL-3.0-only",
   "bugs": {
@@ -20,6 +16,11 @@
   },
   "homepage": "https://github.com/SimonBrazell/privacy-redirect#readme",
   "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
     "web-ext": "^6.2.0"
   }
 }

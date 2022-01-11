@@ -1,8 +1,8 @@
-const targets = /wikipedia.org/;
+const targets = /wikipedia.org/
 
-const redirects = ["https://wikiless.org"];
+const redirects = ['https://wikiless.org']
 
 export default {
   targets,
-  redirects,
-};
+  redirects
+}

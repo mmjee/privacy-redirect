@@ -1,35 +1,37 @@
-window.browser = window.browser || window.chrome;
+window.browser = window.browser || window.chrome
 
-function getMessage(tag) {
+function getMessage (tag) {
   return tag.replace(/__MSG_(\w+)__/g, function (_match, v1) {
-    return v1 ? browser.i18n.getMessage(v1) : null;
-  });
+    return v1 ? browser.i18n.getMessage(v1) : null
+  })
 }
 
-function localisePage() {
-  let elements = document.querySelectorAll("[data-localise]");
+function localisePage () {
+  const elements = document.querySelectorAll('[data-localise]')
 
-  for (let i in elements)
+  for (const i in elements) {
     if (elements.hasOwnProperty(i)) {
-      let obj = elements[i];
-      let tag = obj.getAttribute("data-localise").toString();
+      const obj = elements[i]
+      const tag = obj.getAttribute('data-localise').toString()
 
-      let msg = getMessage(tag);
+      const msg = getMessage(tag)
 
-      if (msg && msg !== tag) obj.textContent = msg;
+      if (msg && msg !== tag) obj.textContent = msg
     }
+  }
 
-  let placeholders = document.querySelectorAll("[data-localise-placeholder]");
+  const placeholders = document.querySelectorAll('[data-localise-placeholder]')
 
-  for (let i in placeholders)
+  for (const i in placeholders) {
     if (placeholders.hasOwnProperty(i)) {
-      let obj = placeholders[i];
-      let tag = obj.getAttribute("data-localise-placeholder").toString();
+      const obj = placeholders[i]
+      const tag = obj.getAttribute('data-localise-placeholder').toString()
 
-      let msg = getMessage(tag);
+      const msg = getMessage(tag)
 
-      if (msg && msg !== tag) obj.placeholder = msg;
+      if (msg && msg !== tag) obj.placeholder = msg
     }
+  }
 }
 
-localisePage();
+localisePage()
